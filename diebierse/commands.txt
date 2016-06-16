@@ -1,0 +1,20 @@
+cd desktop\mubaraka\CS5371\project\researchcodes\diebierse
+
+ant compile
+
+ant compile-tests
+
+ant compile-evosuite
+
+****if error in Gzoltar while running Gzoltar try without evosuite.jar and junit-4.11.jar*****
+
+java -jar com.gzoltar-1.5.1-jar-with-dependencies.jar -Dproject_cp=build\classes:build\tests:lib\jdom-1.1.jar:lib\log4j-1.2.14.jar -DtargetClasses=bierse.controller*:bierse.model*:bierse.view*:bierse* -DtestClasses=bierse.model* -diagnose
+
+
+java -jar evosuite.jar -class Bierse -projectCP=src\main\java\bierse lib\jdom-1.1.jar:lib\log4j-1.2.14.jar
+
+mvn clean package
+
+mvn dependency:copy-dependencies -DoutputDirectory="lib"
+
+	

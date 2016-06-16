@@ -1,0 +1,7 @@
+cd desktop\mubaraka\CS5371\project\researchcodes\jsecurity
+
+mvn clean package
+
+mvn dependency:copy-dependencies -DoutputDirectory="lib"
+
+java -jar com.gzoltar-1.5.1-jar-with-dependencies.jar -Dproject_cp=build\classes:build\tests:lib\activation-1.1.jar:lib\asm-3.1.jar:lib\asm-commons-3.1.jar:lib\asm-tree-3.1.jar:lib\asm-util-3.1.jar:lib\backport-util-concurrent-3.1.jar:lib\cglib-nodep-2.1_3.jar:lib\commons-beanutils-1.7.0.jar:lib\commons-beanutils-core.jar:lib\commons-codec.jar:lib\commons-collections-3.2.jar:lib\commons-logging.jar:lib\commons-logging-1.1.1.jar:lib\easymock-2.3.jar:lib\easymockclassextension-2.3.jar:lib\ehcache-1.4.1.jar:lib\hsqldb-1.8.0.7.jar:lib\jsp-api.jar:lib\jsp-api-2.1.jar:lib\jsr107cache-1.0.jar:lib\jstl.jar:lib\jstl-1.2.jar:lib\log4j.jar:lib\log4j-1.2.15.jar:lib\mail-1.4.jar:lib\quartz.jar:lib\quartz-1.5.2.jar:lib\retroweaver-2.0.5.jar:lib\retroweaver-rt-2.0.5.jar:lib\servlet-api.jar:lib\servlet-api-2.5.jar:lib\spring.jar:lib\spring-2.5.1.jar:lib\standard.jar:lib\standard-1.1.2.jar -DtargetClasses=org.jsecurity.authc.ConcurrentAccessException -DtestClasses=org.jsecurity.authc.ConcurrentAccessExceptionTest -diagnose
